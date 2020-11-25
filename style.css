@@ -1,0 +1,120 @@
+/* style.css */
+
+:root {
+    --burgundy: #67201c;
+    --cream: #f2e2ce;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    line-height: 1.3em;
+    font-family: "Cardo", serif;
+}
+
+/* Layout */
+#container {
+    display: grid;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+
+    grid-template-columns: 1fr 3fr 2fr 3.5fr 1fr;
+    grid-template-rows: 15em auto 8em;
+    grid-template-areas: ". image title intro ."
+                         ". image ingredients preparation ."
+                         "footer footer footer footer footer";
+}
+
+/* Header background colour */
+#ribbon {
+    position: absolute;
+    z-index: -9;
+    width: 100%;
+    height: 15em;
+    background-color: var(--burgundy);
+}
+
+/* Recipe */
+h1, h2 {
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.8em;
+    color: var(--burgundy);
+}
+
+h3 {
+    margin-top: 1.5em;
+    margin-bottom: .5em; /* Controlling the line spacing with respect to text below it */
+    font-size: 1.1em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    
+}
+
+p {
+    line-height: 1.5em;
+    margin-top: 0; /* Controlling the margin between the paragraphs and headers will be easier if left to header formatting*/
+}
+
+ul {
+    padding-left: 1em;
+    margin: 0;
+    list-style: square;
+}
+
+ul li {
+    margin: .2em 0;
+}
+
+/* Header section */
+#title {
+    grid-area: title;
+    color: #fff;
+    margin: auto auto;
+}
+
+#intro {
+    grid-area: intro;
+    color: #fff;
+    margin: auto auto;
+}
+
+/* Image */
+#image {
+    grid-area: image;
+    margin: 4em 4em;
+    background-image: url("pie.jpg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+#ingredients {
+    grid-area: ingredients;
+    padding: 2em;
+    background-color: var(--cream);
+}
+
+#preparation {
+    padding: 2em;
+    grid-area: preparation;
+}
+
+#footer {
+    grid-area: footer;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    background-color: var(--burgundy);
+}
